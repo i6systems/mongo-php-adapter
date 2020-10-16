@@ -29,6 +29,11 @@ script:
 
 jobs:
   include:
+    # Run tests on PHP 8 with the upcoming extension version
+    - stage: test
+      php: nightly
+      env: DRIVER_BRANCH="master"
+
     # Run tests with coverage
     - stage: test
       php: 7.3
